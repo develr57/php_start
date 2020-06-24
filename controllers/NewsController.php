@@ -16,7 +16,7 @@ class NewsController
         return true;
     }
 
-    public function actionView()
+    public function actionView($id)
     {
         if ($id) {
             
