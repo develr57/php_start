@@ -1,6 +1,6 @@
 <?php
 
-$params = array(
+return array(
     'host'      => 'phpstart',
     'dbname'    => 'php_start',
     'user'      => 'root',

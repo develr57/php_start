@@ -1,10 +1,17 @@
 <?php
 
+require(ROOT . '/models/Category.php');
+require(ROOT . '/models/Product.php');
+
 class ProductController
 {
-    public function actionList()
+    public function actionView($id)
     {
-        echo 'ProductController - actionList()';
+        $categories = Category::getCategoriesList();
+
+        $product = Product::getProductById($id);
+
+        require_once(ROOT . '/views/product/view.php');
         return true;
     }
 }

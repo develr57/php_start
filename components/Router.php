@@ -29,16 +29,14 @@ class Router
         foreach ($this->routes as $uriPattern => $path) {
             
             // Сравниваем $uriPattern и $uri
-            if (preg_match("~$uriPattern~", $uri))
-            {
+            if (preg_match("~$uriPattern~", $uri)) {
+
                 // Получаем внутренний путь из внешнего согласно правилу
                 $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
-                //echo $internalRoute."<br>";
 
                 // Определить какой контроллер
                 // и action обрабатывает запрос
                 $segments = explode('/', $internalRoute);
-                //echo "<br><pre>".print_r($segments)."</pre><br>";
 
                 $controllerName = ucfirst(array_shift($segments)) . 'Controller';
 
