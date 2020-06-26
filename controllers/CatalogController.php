@@ -8,7 +8,7 @@ class CatalogController
     public function actionIndex()
     {
         $categories     = Category::getCategoriesList();
-        $latestProducts = Product::getLatestProducts(12);
+        $latestProducts = Product::getLatestProducts(6);
 
         require_once(ROOT . '/views/catalog/index.php');
     }
