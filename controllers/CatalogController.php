@@ -1,25 +1,23 @@
 <?php
 
-require_once(ROOT . '/models/Category.php');
-require_once(ROOT . '/models/Product.php');
-
 class CatalogController
 {
     public function actionIndex()
     {
         $categories     = Category::getCategoriesList();
-        $latestProducts = Product::getLatestProducts(6);
+        $latestProducts = Product::getLatestProducts(12);
 
         require_once(ROOT . '/views/catalog/index.php');
     }
 
-    public function actionCategory($categoryId)
+    public function actionCategory($categoryId, $page = 1)
     {
-        $categories = array();
         $categories = Category::getCategoriesList();
-        
-        $categoryProducts = array();
-        $categoryProducts = Product::getProductsListByCategory($categoryId);
+        $categoryProducts = Product::getProductsListByCategory($categoryId, $page);
+        $total = Product::getTotalProductsInCategory($categoryId);
+
+        // Создаём объект Pagination - постраничная навигация
+        $pagination = new Pagination($total, $page, Product::SHOW_BY_DEFAULT, 'page-');
        
         require_once(ROOT . '/views/catalog/category.php');
 

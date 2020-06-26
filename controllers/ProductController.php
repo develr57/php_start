@@ -1,8 +1,5 @@
 <?php
 
-require(ROOT . '/models/Category.php');
-require(ROOT . '/models/Product.php');
-
 class ProductController
 {
     public function actionView($id)

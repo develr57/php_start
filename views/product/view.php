@@ -36,7 +36,7 @@
                                 <h2><?php echo $product['name'];?></h2>
                                 <p>Код товара: <?= $product['code'] ?></p>
                                 <span>
-                                    <span>US $<?= $product['price'] ?></span>
+                                    <span>US $<?= $product['price']  ?></span>
                                     <label>Количество:</label>
                                     <input type="text" value="3" />
                                     <button type="button" class="btn btn-fefault cart">
