@@ -1,29 +1,44 @@
 <?php
 
+/*
+ * Класс для генерации постраничной навигации
+ */
+
 class Pagination
 {
+
     /**
+     * 
      * @var Ссылок навигации на страницу
+     * 
      */
     private $max = 10;
 
     /**
+     * 
      * @var Ключ для GET, в который пишется номер страницы
+     * 
      */
     private $index = 'page';
 
     /**
+     * 
      * @var Текущая страница
+     * 
      */
     private $current_page;
 
     /**
+     * 
      * @var Общее количество записей
+     * 
      */
     private $total;
 
     /**
+     * 
      * @var Записей на страницу
+     * 
      */
     private $limit;
 
@@ -34,7 +49,7 @@ class Pagination
      * 
      * @return
      */
-    public function __construct($total, $current_page, $limit, $index)
+    public function __construct($total, $currentPage, $limit, $index)
     {
         # Устанавливаем общее количество записей
         $this->total = $total;
@@ -49,7 +64,7 @@ class Pagination
         $this->amount = $this->amount();
 
         # Устанавливаем номер текущей страницы
-        $this->setCurrentPage($current_page);
+        $this->setCurrentPage($currentPage);
     }
 
     /**
@@ -177,4 +192,5 @@ class Pagination
         # Делим и возвращаем
         return round($this->total / $this->limit);
     }
+
 }

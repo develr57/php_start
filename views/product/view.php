@@ -1,4 +1,4 @@
-<?php require(ROOT . '/views/layouts/header.php'); ?>
+<?php include ROOT . '/views/layouts/header.php'; ?>
 
 <section>
     <div class="container">
@@ -34,9 +34,9 @@
                             <div class="product-information"><!--/product-information-->
                                 <img src="/template/images/product-details/new.jpg" class="newarrival" alt="" />
                                 <h2><?php echo $product['name'];?></h2>
-                                <p>Код товара: <?= $product['code'] ?></p>
+                                <p>Код товара: <?php echo $product['code'];?></p>
                                 <span>
-                                    <span>US $<?= $product['price']  ?></span>
+                                    <span>US $<?php echo $product['price'];?></span>
                                     <label>Количество:</label>
                                     <input type="text" value="3" />
                                     <button type="button" class="btn btn-fefault cart">
@@ -63,4 +63,4 @@
     </div>
 </section>
 
-<?php require(ROOT . '/views/layouts/footer.php'); ?>
+<?php include ROOT . '/views/layouts/footer.php'; ?>

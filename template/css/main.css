@@ -13,6 +13,22 @@ body {
   font-weight:400px;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.page-wrapper {
+    min-height: 100%;
+    margin-bottom: -50px;
+}
+* html .page-wrapper {
+    height: 100%;
+}
+.page-buffer {
+    height: 50px;
+}
+
 ul li {
   list-style: none;
 }
@@ -347,6 +363,7 @@ ul.sub-menu {
 
 #footer {
   background: #F0F0E9;
+  height: 50px;
 }
 
 
@@ -545,8 +562,7 @@ ul.sub-menu {
 }
 
 .footer-bottom {
-  background: #D6D6D0;
-  padding-top: 10px;
+  padding-top: 15px;
 }
 
 .footer-bottom p {
@@ -883,8 +899,8 @@ h2.title {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 400;
-  color: #696763;
   height: 34px;
+  color: #696763;
 }
 
 .productinfo img{
@@ -946,7 +962,7 @@ h2.title {
 
 
 
-.add-to-cart {
+.add-to-cart, .checkout {
   background:#F5F5ED;
   border: 0 none;
   border-radius: 0;
@@ -1455,7 +1471,7 @@ h2.title {
 
 
 .login-form form input, .signup-form form input {
-  background: #F0F0E9;
+  background: #ccc;
   border: medium none;
   color: #696763;
   display: block;
@@ -2526,3 +2542,7 @@ h2.title {
 }
 
 
+.carousel-inner .active.left { left: -33%; }
+.carousel-inner .next        { left:  33%; }
+.carousel-inner .prev        { left: -33%; }
+.carousel-control.left,.carousel-control.right {background-image:none;}
